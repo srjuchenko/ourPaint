@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OurShape" Collapsed="true">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAICAAAKEAAAAAAQEIAAAAAACAAIAABCAAAAEAAAAA=</HashCode>
+      <FileName>OurShape.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OurEllipse" Collapsed="true">
+    <Position X="5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OurEllipse.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OurLine" Collapsed="true">
+    <Position X="7.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OurLine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OurPolygon" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAIAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OurPolygon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OurRectangle" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>OurRectangle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OurMagenDavid" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAIAAAAAACAQAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>OurMagenDavid.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OurTriangle" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAIAAAAAACAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OurTriangle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
