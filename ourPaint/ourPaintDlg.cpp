@@ -1,7 +1,7 @@
 
 // ourPaintDlg.cpp : implementation file
 //
-
+//
 #include "pch.h"
 #include "framework.h"
 #include "ourPaint.h"
