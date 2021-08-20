@@ -460,9 +460,7 @@ void CourPaintDlg::OnRButtonDown(UINT nFlags, CPoint point)
 void CourPaintDlg::OnRButtonUp(UINT nFlags, CPoint point)
 {
 	if (rButtonPressed)
-	{
-		
-		
+	{		
 		CPoint diff = point - oldpoint;
 		shapesArr[shapesArr.GetSize() - 1]->shift(diff.x, diff.y);
 		saveShapeIntoCanvas(shapesArr[shapesArr.GetSize() - 1]->getStartPoint(), shapesArr[shapesArr.GetSize() - 1]->getEndPoint());
