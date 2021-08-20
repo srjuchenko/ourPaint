@@ -11,5 +11,6 @@ public:
 
 	virtual void draw(CDC* dc);
 	virtual void Serialize(CArchive& archive);
+
 };
 
