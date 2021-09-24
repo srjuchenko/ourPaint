@@ -340,6 +340,7 @@ void CourPaintDlg::OnLButtonUp(UINT nFlags, CPoint point)
 //line btn
 void CourPaintDlg::OnOurlinebtn()
 {
+	setPressedOnBtn(3);
 	currentShape = LINE;
 	isEraserPressed = false;
 }
@@ -393,6 +394,7 @@ CPoint CourPaintDlg::setEndPoint(const CPoint& endP)
 //ellipse btn
 void CourPaintDlg::OnOurellipsebtn()
 {
+	setPressedOnBtn(4);
 	currentShape = ELLIPSE;
 	isEraserPressed = false;
 }
@@ -400,6 +402,7 @@ void CourPaintDlg::OnOurellipsebtn()
 //rectangle btn
 void CourPaintDlg::OnOurrectanglebtn()
 {
+	setPressedOnBtn(5);
 	currentShape = RECTANGLE;
 	isEraserPressed = false;
 }
@@ -407,6 +410,7 @@ void CourPaintDlg::OnOurrectanglebtn()
 //magen david btn
 void CourPaintDlg::OnOurmagendvdbtn()
 {
+	setPressedOnBtn(6);
 	currentShape = MAGENDAVID;
 	isEraserPressed = false;
 }
@@ -421,6 +425,7 @@ void CourPaintDlg::OnBnClickedFillcolorbtn()
 //triangle btn
 void CourPaintDlg::OnOurtrianglebtn()
 {
+	setPressedOnBtn(7);
 	currentShape = TRIANGLE;
 	isEraserPressed = false;
 }
@@ -461,8 +466,6 @@ void CourPaintDlg::OnRButtonUp(UINT nFlags, CPoint point)
 {
 	if (rButtonPressed)
 	{
-		
-		
 		CPoint diff = point - oldpoint;
 		shapesArr[shapesArr.GetSize() - 1]->shift(diff.x, diff.y);
 		saveShapeIntoCanvas(shapesArr[shapesArr.GetSize() - 1]->getStartPoint(), shapesArr[shapesArr.GetSize() - 1]->getEndPoint());
@@ -495,21 +498,25 @@ void CourPaintDlg::saveShapeIntoCanvas(const CPoint& start, const CPoint& end)
 	if (end.x > RIGHT_CANVAS_LIMIT )
 	{
 		diff = end.x - RIGHT_CANVAS_LIMIT;
+		shapesArr[shapesArr.GetSize() - 1]->shift((-1)*diff,0);
 	}
 	else if (end.y > BOTTOM_CANVAS_LIMIT)
 	{
 		diff = end.y - BOTTOM_CANVAS_LIMIT;
+		shapesArr[shapesArr.GetSize() - 1]->shift(0, (-1)*diff);
 	}
 	else if (start.y < TOP_CANVAS_LIMIT)
 	{
 		diff = start.y - TOP_CANVAS_LIMIT;
+		shapesArr[shapesArr.GetSize() - 1]->shift(0, (-1) * diff);
 	}
 	else if (start.x < LEFT_CANVAS_LIMIT)
 	{
 		diff = start.x - LEFT_CANVAS_LIMIT;
+		shapesArr[shapesArr.GetSize() - 1]->shift((-1) * diff, 0);
 	}
 
-	shapesArr[shapesArr.GetSize() - 1]->shift((-1)*diff,(-1)* diff);
+	//shapesArr[shapesArr.GetSize() - 1]->shift((-1) * diff, (-1)*diff);
 
 	diff = 0;
 	if (start.x > RIGHT_CANVAS_LIMIT)
@@ -535,6 +542,7 @@ void CourPaintDlg::saveShapeIntoCanvas(const CPoint& start, const CPoint& end)
 //erase btn
 void CourPaintDlg::OnOurerasebtn()
 {
+	setPressedOnBtn(8);
 	isEraserPressed = true;
 }
 
@@ -569,4 +577,14 @@ void CourPaintDlg::OnCbnSelchangeCombo1()
 	CString borderString;
 	BORDERSIZEBTN.GetLBText(BORDERSIZEBTN.GetCurSel(), borderString);
 	borderSize = _wtoi(borderString);
+}
+
+//this function display which button is checked 
+void CourPaintDlg::setPressedOnBtn(int index)
+{
+	for (int i = 3; i <= 8; i++)
+	{
+		ourToolBar.SetButtonStyle(i, TBBS_BREAK);
+	}
+	ourToolBar.SetButtonStyle(index, TBBS_PRESSED);
 }

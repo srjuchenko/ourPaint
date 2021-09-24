@@ -14,7 +14,7 @@ protected:
 public:
 	OurShape();
 	OurShape(const CPoint& start, const CPoint& end,const COLORREF& bColor,const COLORREF& fcolor, const int& border);
-	//virtual ~OurShape() {}
+	virtual ~OurShape() {}
 
 	int getStartPointX() { return startPoint.x; }
 	int getStartPointY() { return startPoint.y; }

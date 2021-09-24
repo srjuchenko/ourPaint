@@ -10,7 +10,7 @@ protected:
 public:
 	OurMagenDavid() : OurPolygon() {}
 	OurMagenDavid(const CPoint& start, const CPoint& end, const COLORREF& bColor, const COLORREF& fcolor, const int& border, const int& numOfEdges);
-
+	~OurMagenDavid() {}
 
 	virtual void draw(CDC* dc);
 
