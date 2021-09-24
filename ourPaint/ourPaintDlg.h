@@ -88,11 +88,11 @@ public:
 	CMFCColorButton fillColorBtn;
 	afx_msg void OnOurtrianglebtn();
 	afx_msg void OnRButtonDown(UINT nFlags, CPoint point);
-	
 	afx_msg void OnRButtonUp(UINT nFlags, CPoint point);
 	afx_msg void OnOurerasebtn();
 	afx_msg void OnOurundobtn();
 	afx_msg void OnOurredobtn();
 	CComboBox BORDERSIZEBTN;
 	afx_msg void OnCbnSelchangeCombo1();
+	void setPressedOnBtn(int index);
 };

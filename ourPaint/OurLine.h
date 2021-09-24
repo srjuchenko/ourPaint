@@ -6,7 +6,7 @@ class OurLine : public OurShape
 public:
 	OurLine() :OurShape() {}
 	OurLine(const CPoint& start, const CPoint& end,const COLORREF& bColor, const int& border);
-
+	~OurLine() {}
 	virtual void draw(CDC* dc);
 };
 

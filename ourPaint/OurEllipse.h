@@ -6,7 +6,7 @@ class OurEllipse : public OurShape
 public:
 	OurEllipse() :OurShape() {}
 	OurEllipse(const CPoint& start, const CPoint& end, const COLORREF& bColor, const COLORREF& fcolor, const int& border);
-
+	~OurEllipse() {}
 	virtual void draw(CDC* dc);
 };
 
