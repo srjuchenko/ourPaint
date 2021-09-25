@@ -40,6 +40,7 @@ protected:
 	bool lButtonPressed;
 	bool rButtonPressed;
 	bool isEraserPressed;
+	bool inside;
  
 	bool isInside(CPoint& point,int& index);
 	void saveShapeIntoCanvas(const CPoint& start, const CPoint& end);

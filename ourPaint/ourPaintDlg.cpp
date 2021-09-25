@@ -56,6 +56,7 @@ CourPaintDlg::CourPaintDlg(CWnd* pParent /*=nullptr*/)
 	lButtonPressed = false;
 	rButtonPressed = false;
 	isEraserPressed = false;
+	inside = false;
 	fillColorBtn.SetColor(RGB(255, 255, 255));
 	oldpoint = 0;
 
@@ -305,7 +306,7 @@ void CourPaintDlg::OnMouseMove(UINT nFlags, CPoint point)
 	}
 
 	// shifhting shape
-	if (rButtonPressed && currentShape != NOTHING)
+	if (rButtonPressed && currentShape != NOTHING && inside)
 	{
 		
 		CPoint diff = point - oldpoint;
@@ -464,12 +465,12 @@ void CourPaintDlg::OnRButtonDown(UINT nFlags, CPoint point)
 //right mouse btn up
 void CourPaintDlg::OnRButtonUp(UINT nFlags, CPoint point)
 {
-	if (rButtonPressed)
+	if (rButtonPressed && inside)
 	{
 		CPoint diff = point - oldpoint;
 		shapesArr[shapesArr.GetSize() - 1]->shift(diff.x, diff.y);
 		saveShapeIntoCanvas(shapesArr[shapesArr.GetSize() - 1]->getStartPoint(), shapesArr[shapesArr.GetSize() - 1]->getEndPoint());
-
+		inside = false;
 		rButtonPressed = false;
 		Invalidate();
 	}
@@ -484,10 +485,12 @@ bool CourPaintDlg::isInside(CPoint& point,int &index)
 	{
 		if (shapesArr[i]->isInside(point))
 		{
+			inside = true;
 			index = i;
 			return true;
 		}
 	}
+	return false;
 }
 
 //helping function, changes the shape position if the user moves the shape above the limits
