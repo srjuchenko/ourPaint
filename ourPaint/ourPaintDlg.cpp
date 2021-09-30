@@ -59,7 +59,7 @@ CourPaintDlg::CourPaintDlg(CWnd* pParent /*=nullptr*/)
 	inside = false;
 	fillColorBtn.SetColor(RGB(255, 255, 255));
 	oldpoint = 0;
-
+	
 
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -525,21 +525,27 @@ void CourPaintDlg::saveShapeIntoCanvas(const CPoint& start, const CPoint& end)
 	if (start.x > RIGHT_CANVAS_LIMIT)
 	{
 		diff = start.x - RIGHT_CANVAS_LIMIT;
+		shapesArr[shapesArr.GetSize() - 1]->shift((-1) * diff, 0);
+		
 	}
 	else if (start.y > BOTTOM_CANVAS_LIMIT)
 	{
 		diff = start.y - BOTTOM_CANVAS_LIMIT;
+		shapesArr[shapesArr.GetSize() - 1]->shift(0, (-1) * diff);
+		
 	}
 	else if (end.y < TOP_CANVAS_LIMIT)
 	{
 		diff = end.y - TOP_CANVAS_LIMIT;
+		shapesArr[shapesArr.GetSize() - 1]->shift(0, (-1) * diff);
 	}
 	else if (end.x < LEFT_CANVAS_LIMIT)
 	{
 		diff = end.x - LEFT_CANVAS_LIMIT;
+		shapesArr[shapesArr.GetSize() - 1]->shift((-1) * diff, 0);
 	}
 
-	shapesArr[shapesArr.GetSize() - 1]->shift((-1) * diff, (-1) * diff);
+	//shapesArr[shapesArr.GetSize() - 1]->shift((-1) * diff, (-1) * diff);
 }
 
 //erase btn
