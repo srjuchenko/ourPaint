@@ -6,7 +6,7 @@
 
 //canvas limits
 #define LEFT_CANVAS_LIMIT  0
-#define TOP_CANVAS_LIMIT  50
+#define TOP_CANVAS_LIMIT  60
 #define RIGHT_CANVAS_LIMIT 900
 #define BOTTOM_CANVAS_LIMIT 730
 //canvas limits
