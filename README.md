@@ -8,7 +8,7 @@ Paint mfc windows application , by Sergey Juchenko and Vladimir Poplavsky
 
 * Read more about MFC: https://docs.microsoft.com/en-us/cpp/mfc/mfc-desktop-applications?view=msvc-170
 
-* Here you can see the errarechy of the clasees:
+* Here you can see the hierarchy of the clasees:
  ![image](https://user-images.githubusercontent.com/76474133/176143502-4453a29b-eefe-4281-9d07-1550809a0eb2.png)
 
 
